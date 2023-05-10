@@ -16,12 +16,18 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.nio.charset.MalformedInputException;
 
 public class Main {
-    public static void main(String[] args) throws MalformedURLException, FileNotFoundException {
+    public static void main(String[] args) throws MalformedURLException, FileNotFoundException, URISyntaxException {
 
-        Numarare2 numarare2 = new Numarare2();
+        Numarare2 numarare2 = new Numarare2(2,"Cercuri", "albastre");
+        Numarare2 numarare3 = new Numarare2(3,"Patrate", "albastre");
+//        Numarare2 numarare1 = new Numarare2(4,"Triunghiuri", "albastre");
+//        numarare2.crearePDF();
+          numarare3.crearePDF();
+//        numarare1.crearePDF();
         numarare2.crearePDF();
     }
 }
