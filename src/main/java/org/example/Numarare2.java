@@ -45,15 +45,15 @@ public class Numarare2 {
             PdfDocument pdfDocument = new PdfDocument(pdfWriter);
             pdfDocument.setDefaultPageSize(PageSize.A4);
             Document document = new Document(pdfDocument);
-            document.add(new Paragraph("Invatarea cifrei " + nr).setFontSize(20f));
+            document.add(new Paragraph("Invatarea " + this.corectie() + nr).setFontSize(20f));
             Border gb = new SolidBorder(Color.GRAY, 2f);
             Table div = new Table(full);
             div.setBorder(gb);
             document.add(div);
-            document.add(new Paragraph("Exersarea scrierii cifrei " + nr + this.numar()));
+            document.add(new Paragraph("Exersarea scrierii " + this.corectie() + nr + this.numar()));
             document.add(img1);
             document.add(img1);
-            document.add(new Paragraph("Exercitii de recunoastere a civrei " + nr + this.numar() + ":"));
+            document.add(new Paragraph("Exercitii de recunoastere a " + this.corectie() + nr + this.numar() + ":"));
             document.add(image.setFontSize(0.5f));
             document.add((new Paragraph("Creati prin incercuire grupe de cate " + this.figuri())));
             document.add(img3);
@@ -84,5 +84,9 @@ public class Numarare2 {
         if (nr == 9) return "9(noua):";
         if (nr == 10) return "10(zece):";
         return "invalid";
+    }
+    public String corectie(){
+        if(nr == 10) return "numarului ";
+        else return "cifrei ";
     }
 }
